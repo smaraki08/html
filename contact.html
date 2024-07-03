@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Form Example</title>
+<title>contact-form</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -61,6 +61,17 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+    button[type=submit] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
     input[type=checkbox] {
         margin-right: 10px;
     }
@@ -91,7 +102,7 @@
 <body>
     <div class="header">
         <img src="1.png"></img>
-        <div class="site-name"><a href="PORTFOLIO.html">Cafe Smarks</a></div>
+        <div class="site-name"><a href="assignment1.html">Cafe Smarks</a></div>
         <div class="contact"><a href="contact.html" >CONTACT</a></div>
 
     </div>
@@ -100,7 +111,7 @@
     <p class="para">At Cafe Smark, we are more than just a cafe; we are a community hub where connections are made, conversations flow, and memories are created. We host regular events, such as live music nights, book clubs, and art exhibitions, to bring people together and celebrate local talent.</p>
     
     <h2>Form</h2>
-    <form action="#thank-you" method="post">
+    <form id="contact-form">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -130,7 +141,7 @@
             <button type="submit">Submit</button>
         </div>
     </form>
-    <div class="thank-you-message">
+    <div class="thank-you-message" id="thank-you-message">
         Thank you! The form has been submitted.
     </div>
     
@@ -138,6 +149,13 @@
         &copy; 2024 Cafe Smark. All rights reserved.
     </div>
 </div>
+<script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from actually submitting
+        document.getElementById('contact-form').style.display = 'none'; // Hide the form
+        document.getElementById('thank-you-message').style.display = 'block'; // Show the thank you message
+    });
+</script>
 
 </body>
 </html>
