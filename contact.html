@@ -6,14 +6,14 @@
         font-family: Arial, sans-serif;
         line-height: 1.6;
         padding: 20px;
-        background-color: #9dd25cee;
+        background-color: #749b6de7;
     }
     .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
-        background-color: #022707;
+        background-color: #3f6651;
     }
     .header img {
         width: 50px;
@@ -23,7 +23,7 @@
     .header .site-name {
         flex-grow: 1;
         text-align: left;
-        background-color: #f0d01f;
+        background-color: #e6a46b;
         padding: 10px;
         font-size: 30px;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -31,7 +31,7 @@
 
     }
     .header .contact {
-        background-color: #7b7575;
+        background-color: #f0f0f0;
         padding: 10px;
         cursor: pointer;
     }
@@ -71,21 +71,36 @@
         font-size: 14px;
         color: #777;
     }
+    .thank-you-message {
+        display: none;
+        background: #dff0d8;
+        color: #3c763d;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        margin-top: 20px;
+    }
+    #thank-you:target .thank-you-message {
+        display: block;
+    }
+    #thank-you:target form {
+        display: none;
+    }
 </style>
 </head>
 <body>
     <div class="header">
-        <img src="1.png">
+        <img src="1.png"></img>
         <div class="site-name"><a href="PORTFOLIO.html">Cafe Smarks</a></div>
         <div class="contact"><a href="contact.html" >CONTACT</a></div>
 
     </div>
 
-<div class="container">
+    <div class="container" id="thank-you">
     <p class="para">At Cafe Smark, we are more than just a cafe; we are a community hub where connections are made, conversations flow, and memories are created. We host regular events, such as live music nights, book clubs, and art exhibitions, to bring people together and celebrate local talent.</p>
     
     <h2>Form</h2>
-    <form action="/submit-your-form-handler" method="post">
+    <form action="#thank-you" method="post">
         <div>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
@@ -115,6 +130,9 @@
             <button type="submit">Submit</button>
         </div>
     </form>
+    <div class="thank-you-message">
+        Thank you! The form has been submitted.
+    </div>
     
     <div class="footer">
         &copy; 2024 Cafe Smark. All rights reserved.
@@ -122,4 +140,4 @@
 </div>
 
 </body>
-</htm
+</html>
